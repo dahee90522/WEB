@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>form 태그</title>
+    </head>
+    <body>
+        <form method = "post" action = "#">
+            아이디<input type = "text" name = "user_id" value = "abc" size = "15"/><br/>
+            비밀번호<input type = "password" value = "12" name = "pwd"/><br/>
+            <input type = "submit" name = "bt" value = "로그인"/>
+            <input type = "reset" name = "bt2" value = "다시입력">
+            <hr>
+            <h3>학생의 성별과 학년은 ?(checkbox/radio)</h3>
+            <input type = "radio" name = "gender" value = "male" />남성<!-- radio복수선택 X --><br>
+            <input type = "radio" name = "gender" value = "female" />여성<!-- checkbox 복수 선택 가능 --><br>
+            <input type = "radio" name = "year" value = "1" />1학년<br>
+            <input type = "radio" name = "year" value = "2" checked/>2학년<br>
+            <input type = "radio" name = "year" value = "3" />3학년<br>
+            <hr>
+            <h3>즐겨보는 프로그램</h3>
+            <input type = "checkbox" name = "sport" value = "a" checked/>스포츠<br>
+            <input type = "checkbox" name = "sport" value = "b" />농구<br>
+            <input type = "checkbox" name = "sport" value = "c" />배구<br>
+            <input type = "checkbox" name = "sport" value = "d" />야구<br>
+            <hr>
+            <h3>첨부파일을 올리시오</h3>
+            <input type = "file" name = "myfile" />
+            <hr>
+            <h3>과제제출의 첨부 파일을 올리시오</h3>
+            제출자 : <input type ="text" name ="submitper" size = "15" />
+            [첨부파일]<input type = "file" name = "myfile1"/>
+            <input type = "submit" name = "bt2" value = "과제제출"/>
+            <input type = "reset" name = "bt3" value = "취소"/>
+            <hr>
+            <hr>
+        </form>
+    </body>
+</html>

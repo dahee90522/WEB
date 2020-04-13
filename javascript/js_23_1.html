@@ -1,0 +1,17 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>이벤트 객체의 프로퍼티 출력</h2><hr>
+        <p id = "p">버튼을 클릭하면 이벤트 객체를 출력합니다</p>
+        <button onclick = "f(event)">클릭하세요</button>
+        <script>
+            function f(e){
+                document.write("type : ", e.type,"<br>");
+                document.write("target : ", e.target,"<br>");
+                document.write("currenttarget : ", e.currenttarget,"<br>");
+            }
+        </script>
+    </body>
+</html>

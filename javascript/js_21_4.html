@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            span{
+                visibility: hidden;
+                color:brown;
+            }
+        </style>
+        <script>
+            function show_hide(){
+                
+                var span = document.getElementsByTagName("span");
+                for(var i = 0;i<span.length;i++){
+                    var style=window.getComputedStyle(span[i]);
+                    var obj=style.getPropertyValue('visibility');
+                    if(obj=='hidden'){
+                        span[i].style.visibility='visible';
+                    }
+                    else{
+                        span[i].style.visibility='hidden';
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>다음 빈 곳에 숨은 단어 ? </h3>
+        <input type = "button"value="show/hide"onclick="show_hide()">
+        <hr>
+        <ul>
+            <li>뭉쳐야 (<span>산다</span>)</li>
+            <li>동백꽃 (<span>필 무렵</span>)</li>
+            <li>어쩌다 (<span>발견한 하루</span>)</li>
+        </ul>
+        <!--속성을 가져옴 : getComputidStyle(span[i])
+            속성의 값을 가져옴 : getPropertyValue('visibility')-->
+    </body>
+</html>

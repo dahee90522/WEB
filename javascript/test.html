@@ -1,0 +1,177 @@
+<head>
+    <style>
+        div {
+            
+        }
+        .board_editor{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="less" id="less">
+        <div class="board_editor">
+            <a class="title">후기 작성</a>
+            <form action="./" method="post" onsubmit="return procFilter(this, insert_comment)" class="write_comment"
+                id="write_comment"><input type="hidden" name="error_return_url"
+                    value="/index.php?document_srl=37745580" />
+                <input type="hidden" name="act" value="" />
+                <input type="hidden" name="vid" value="" />
+                <input type="hidden" name="mid" value="goedam" />
+                <input type="hidden" name="document_srl" value="37745580" />
+                <input type="hidden" name="comment_srl" value="" />
+                <input type="hidden" name="content" value="" />
+                <div class="write_text">
+                    <span class="item">
+                        <input type="text" name="nick_name" placeholder="이름" value="이름없음" id="userName"
+                            class="nick_name" autocomplete="off" />
+                    </span>
+                    <span class="item">
+                        <input type="password" name="password" placeholder="비밀번호" id="userPw" class="password" />
+                        <label for="autoset"><input type="checkbox" name="autoset" class="autoset" id="autoset"
+                                onClick="RandomPassword(this.form)">자동암호</label>
+                        <label for="stop"><input type="checkbox" name="stop" id="stop" value="Y">stop</label>
+                    </span>
+                    <div class="fileBox">
+                        <input type="button" class="btn_file" value="사진 추가" />
+                        <input type="file" name="Filedata" id="Filedata" />
+                    </div>
+                </div>
+                <!-- JS -->
+                <div class="xeTextEditor ">
+                    <input type="hidden" id="htm_3" value="" />
+                    <textarea id="editor_3" rows="8" cols="42" class="iTextArea"></textarea>
+                </div>
+                <script>//<![CDATA[
+                    editorStartTextarea(3, "content", "comment_srl");
+            //]]></script>
+                <div class="reloadzone">
+                    <div class="previewImage" id="previewImage"></div>
+                    <script>
+                        var editor_sequence = '3';
+                        jQuery(document).ready(function () {
+                            jQuery('.btn_file').unbind();
+                            jQuery('.btn_file').click(function () {
+                                jQuery('#Filedata').trigger('click');
+                            });
+                            jQuery.ajax({
+                                type: "POST",
+                                url: "http://thredic.com/index.php",
+                                data: "mid=goedam&editor_sequence=" + editor_sequence + "&module=file&act=getFileList",
+                                dataType: "json",
+                                contentType: "application/json"
+                            }).done(function (args) {
+                                if (args.files.length > 0) {
+                                    for (var index in args.files) {
+                                        jQuery('#previewImage').css('display', 'block');
+                                        imageAppends(args.files[index].file_srl, args.upload_target_srl, args.files[index].download_url);
+                                    }
+                                }
+                            });
+                        });
+                        function registryImageDelete() {
+                            jQuery('.imageDelete').unbind();
+                            jQuery('.imageDelete').click(function () {
+                                var file_srl = jQuery(this).attr('data-id');
+                                if (delete_file(file_srl)) {
+                                    jQuery(this).parent('div').remove();
+                                }
+                            });
+                        }
+                        function imageAppends(file_srl, upload_target_srl, download_url) {
+                            var target = document.getElementById("previewImage");
+
+                            var imageController = document.createElement("div");
+                            imageController.setAttribute('class', "imageBox");
+
+                            var imageDelete = document.createElement("a");
+                            imageDelete.setAttribute('class', "imageDelete");
+                            imageDelete.setAttribute('data-id', file_srl);
+                            imageDelete.setAttribute('data-target', upload_target_srl);
+                            imageDelete.appendChild(document.createTextNode("삭제"));
+
+                            var imageAppend = document.createElement("img");
+                            imageAppend.setAttribute('src', download_url);
+                            imageController.appendChild(imageAppend);
+                            imageController.appendChild(imageDelete);
+                            target.appendChild(imageController);
+                            registryImageDelete();
+                        }
+                        function ajaxFileUpload() {
+                            var formData = new FormData();
+                            formData.append("upload_target_srl", jQuery('input[name=comment_srl]').val() == '' ? "undefined" : jQuery('input[name=comment_srl]').val());
+                            formData.append("editor_sequence", editor_sequence);
+                            formData.append("mid", current_mid);
+                            formData.append("act", "procFileUpload");
+                            formData.append('Filedata', jQuery('input[type=file]')[0].files[0]);
+                            var request = new XMLHttpRequest();
+                            request.open("POST", "http://thredic.com/index.php?module=file&act=procFileUpload&mid=" + current_mid);
+                            request.onreadystatechange = function () {
+                                if (request.readyState == 4) {
+                                    var response = request.responseText;
+                                    response = JSON.parse(response);
+                                    if (response.error == 0) {
+                                        jQuery('#previewImage').css('display', 'block');
+                                        imageAppends(response.file_srl, response.upload_target_srl, response.download_url);
+                                        jQuery.ajax({
+                                            type: "POST",
+                                            url: "http://thredic.com/index.php",
+                                            data: "mid=goedam&editor_sequence=" + editor_sequence + "&module=file&act=getFileList",
+                                            dataType: "json",
+                                            contentType: "application/json"
+                                        }).done(function (args) {
+                                            jQuery('input[name=comment_srl]').val(args.upload_target_srl);
+                                        });
+                                    } else {
+                                        alert(response.message);
+                                    }
+                                }
+                            }
+                            request.send(formData);
+                        }
+                        function delete_file(file_srl) {
+                            var msg = window.confirm('삭제하시겠습니까?');
+                            if (msg) {
+                                var settings = file_srl;
+                                var params = new Array();
+                                params["editor_sequence"] = editor_sequence;
+                                params["file_srls"] = file_srl;
+                                var response_tags = new Array("error", "message");
+                                exec_xml("file", "procFileDelete", params, function () {
+                                });
+                                if (jQuery('#previewImage .imageBox').length === 1) {
+                                    jQuery('#previewImage').css('display', 'none');
+                                }
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    </script>
+                    <script>//<![CDATA[
+                        (function ($) {
+                            jQuery('#Filedata').unbind('change');
+                            $('#Filedata').on("change", function () {
+                                if (document.getElementById('Filedata').value === "") {
+                                    alert("파일을 선택하세요");
+                                    return false;
+                                }
+                                if (jQuery('#previewImage .imageBox').length === 3) {
+                                    alert("이미지는 3개를 초과할 수 없습니다.");
+                                    return false;
+                                }
+                                ajaxFileUpload();
+                            });
+                        })(jQuery);
+        //]]>
+                    </script>
+                </div>
+                <div class="btnArea">
+                    <input type="submit" class="btn" value="등록" />
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>

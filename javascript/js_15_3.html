@@ -1,0 +1,38 @@
+<!-- getFullYea()：2019(4자리 년도를 가져옴)
+2) getMonth() : 월 가져옴(1월 :0, 2월 :1,...12월 :11)
+3) getDate() : 날짜 가져오기(1-31)
+4) getHour() :시간 가져오기(0-23)
+5) getMinutes() :　분가져오기(0-59)
+6) getSeconds() :초 가져오기 (0-59)
+7) getMilliseconds() :　(0-999)
+8) toLocalString() :현재 지역시간 가져오기 -->
+
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>페이지 방문 초시간 짝수이면 violet, 홀수이변 lightskyblue 배경</h3>
+        <script>
+            var date1 = new Date();/*y, m, d, h, m, s*/
+            document.write("<hr>");
+            var hh = date1.getHours();
+            var mm = date1.getMinutes();
+            var ss = date1.getSeconds();
+            document.write("현재 시간 : ", hh,"시, ", mm,"분, ", ss, "초");
+            if(ss%2==0){
+                document.write("<style>");
+                document.write("body{background:violet;}");
+                document.write("</style>");
+                //document.body.style.backgroundColor="violet";
+            }
+            else if(ss%2==1){
+                document.write("<style>");
+                document.write("body{background:lightskyblue;}");
+                document.write("</style>");
+            }
+        </script>
+    </body>
+</html>

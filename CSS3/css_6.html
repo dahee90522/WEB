@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>형제 선택자</title>
+    </head>
+    <body>
+        <style>
+            h1 + ul{
+                font-size: 16;
+                color:red;
+                background-color: blue;
+            }
+            h1 ~ul{
+                color:brown;
+                font-weight: bolder
+            }
+        </style>
+        <section id = "container">
+            <h1>예약방법 및 요금</h1>
+            <ul>
+                <li>전화남기기</li>
+                <li>문자남기기</li>
+            </ul>
+            <ul>
+                <li>1인 : 30000원</li>
+                <li>2인 : 50000원</li>
+                <li>3인 : 80000원</li>
+            </ul>
+        </section>
+    </body>
+</html>

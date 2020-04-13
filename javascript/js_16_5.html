@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <script>
+            var a = new Array();
+            for(var i = 0;i<5;i++){
+                a[i]=prompt("정수 입력");
+            }
+            document.write("입력된 수의 배열<br>");
+            for(var i = 0;i<5;i++){
+                document.write(a[i]+"  ");
+            }
+            document.write("<hr>");
+            document.write("역순으로 정리된 배열<br>");
+            for(var i = 4;i>=0;i--){
+                document.write(a[i]+"  ");
+            }
+            document.write("<br>");
+            document.write(a.reverse());
+        </script>
+    </body>
+</html>

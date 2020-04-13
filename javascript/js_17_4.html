@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>자동차</h3>
+        <hr>
+        <script>
+            /*var car={
+                'model':'벤츠',
+                'speed':60,
+                'color':'red',
+                brake:function(){this.speed-=10;return this.speed;},
+                accel:function(){this.speed+=10;return this.speed;}
+            }
+            document.write(car.model,"<br>");
+            document.write(car.color,"<br>");
+            document.write(car.brake());*///리터럴방식
+            function Car(model, speed, color){
+                this.model = model;
+                this.speed = speed;
+                this.color = color
+                this.brake = function(){this.speed-=10;return this.speed;}
+                this.accel = function(){this.speed+=10;return this.speed;}
+            }//, getGrade()
+            var one = new Car('벤츠', 80, 'red');
+            var two = new Car('아반테', 70, 'gray');
+            
+            document.write(one.model,"<br>");
+            document.write(one.color,"<br>");
+            document.write(one.brake(),"<br>");
+            document.write(two.model,"<br>");
+            document.write(two.color,"<br>");
+            document.write(two.accel());
+        </script>
+    </body>
+</html>

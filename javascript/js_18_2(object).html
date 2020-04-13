@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>책</h3>
+        <hr>
+        <script>
+            var book = new Object();
+            book.title='가';
+            book.author='나';
+            book.price=8000;
+            book.read=function(){document.write("읽다");}
+            book.buy=function(){document.write("사다");}
+            
+            document.write(book.title+"<br>");
+            document.write(book.author+"<br>");
+            document.write(book.price+"<br>");
+            book.read();
+            book.buy();
+        </script>
+    </body>
+</html>

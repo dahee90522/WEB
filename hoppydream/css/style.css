@@ -1,0 +1,80 @@
+#skip {position: absolute;}
+#skip a {position: absolute; left: 5px; top:-40px; border: 0px solid #fff; color: #fff; width:180px; height: 35px; line-height: 35px; font-size: 12px;}
+#skip a:active, #skip a:focus{top: 0;}
+html, body{
+    margin : 0;
+    padding : 0;
+    height : 100%;
+}
+HR{MARGIN:0 AUTO;}
+header{
+    top:5;
+    width : 100%;
+    height : 12%;
+    float : center;
+    background-size : 100%;
+    text-align:center;
+    
+    background-color : WHITE;
+    position: relative;
+}
+header #heaaad{
+    color : rgb(178, 219, 97);
+    display : inline;
+    margin-right:-30px;
+    top:100px;
+    font-family: 'Patua One', cursive;
+    font-size: 26pt;
+    text-decoration :none;
+    font-weight:900;
+    
+}
+header .logo{width:60px;height:53px;position:absolute;margin-left:-62px;}
+h1{ margin : 10px;}
+iframe{
+    width : 100%;
+    height:100%
+}
+.menu{
+    top:100px;
+    padding-top : 15px;
+    font-size : 12px;
+}
+.menuname{
+    margin-right: 8px;
+    margin-left: 8px;
+}
+#section{
+    width : 100%;
+    height :80%; /*82%;*/
+    margin : 0 auto;
+    float : left;
+    background-color : #f1f1f1; 
+    text-align:center;
+}
+
+body{
+    margin : 0;
+}
+.imgmenu{
+    float:left;
+    
+}
+
+/*푸터*/
+#footer{ width: 100%; height: 15%; border-top:1px solid #eee;}
+.footer{text-align : center;padding:15px;background-color : WHITE;}
+.footer ul{margin-bottom:5px;}
+.footer li{position: relative;display:inline;padding:0 6px;}
+.footer ul li:before{content :'';width:1px;height:12px;background:#000000;position: absolute;left:0;top:2px;}
+.footer li:first-child:before{width:0; height:0;}
+
+@media(min-height :0) and (max-height:500px){/*mobile version*/
+    header{height:30px;}
+    .menu{padding-top : 2px;font-size : 20px;}
+    #section{height : 100%;}
+    #heaaad{font-size: 26px; font-family:NONE;}
+}
+/*레이어팝업*/
+#layer{display:none;position:fixed;left:50px;top:50px;width:700px;border:10px solid #dceff7;box-shadow:3px 10px rgba(0, 0, 0, 0.4);}
+#layer .save{position: absolute;}

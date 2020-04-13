@@ -1,0 +1,53 @@
+
+            <!doctype html>
+            <html>
+                <head>
+                    <title>랜덤게임</title>
+                    <style>
+                    </style>
+                    <script>
+                        var answer="58";
+                            var count=0;
+                        function guess(){
+                            count++;
+                            var num1=document.getElementById("num").value;
+                            var num=parseInt(num1);
+                            
+                            if(num==answer){
+                                
+                                document.getElementById("cnt").value=count;
+                                document.getElementById("hint").value="정답입니다.";
+                            }
+                            else if(num>answer){
+                                
+                                document.getElementById("cnt").value=count;
+                                document.getElementById("hint").value="수가 더 작습니다.";
+                            }
+                            else if(num<answer){
+                                
+                                document.getElementById("cnt").value=count;
+                                document.getElementById("hint").value="수가 더 큽니다.";
+                            }
+                            if(count>5){
+                                document.getElementById("cnt").value=6 ;
+                                document.getElementById("hint").value="횟수를 초과하셨습니다.";
+                            }
+                        }
+                    </script>
+                </head>
+                <body>
+                    <h2>숫자맞추기</h2>
+                    이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.
+                    <br/>숫자는 1부터 100사이에 있습니다.
+                    <form>
+                        숫자<input type="text" id="num">
+                        <input type="button" value="확인" onclick="guess()">
+                        <br/>
+                        추측횟수<input type="text" id="cnt">
+                        힌트<input type="text" id="hint">
+                    </form>
+                    
+                    <script>
+                    </script>
+                </body>
+            </html>

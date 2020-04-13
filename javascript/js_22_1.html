@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function init(){
+                //addEventListener
+                var p = document.getElementByID("p");
+                p.addEventListener("mouseover", over);
+                //p.addEventListener("mouseover", function(){
+
+                //});익명함수 가능
+            }
+            function over(){
+                p.style.border="3px dotted green";
+            }
+            p.onmouseover=function(){
+                p.style.backgroundColor = 'salmon';
+            }
+        </script>
+    </head>
+    <body onload=init()>
+        <p id="p"onmouseover = "this.style.backgroundColor = 'red'"onmouseout = "this.style.backgroundColor = 'white'">오늘을 2019년 11월 20일</p>
+       
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<script>
+    function createDiv(){
+        var obj = document.getElementById("parent");
+        var newDIV = document.createElement("div");
+        newDIV.innerHTML = "새로 생성된 DIV 입니다.";
+        newDIV.setAttribute("id", "myDiv");
+        newDIV.style.backgroundColor="yellow";
+        obj.appendChild(newDIV);
+        newDIV.onclick=function(){
+            var parent = this.parentElement;
+            parent.removeChild(this);
+        }
+    }
+</script>
+<body id = "parent">
+    <a href = "javascript:createDiv()">div생성</a>
+</body>

@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <script>
+        function co() {
+            var fru = document.getElementsByName("fruit");
+            var im = document.getElementsById("img");
+            if (fru.checked[0].value == "apple") im.src = "../img/apple.jpg"
+            else if (fru.checked[1].value == "banana") im.src = "../img/banana.jpg"
+            else if (fru.checked[2].value == "mango") im.src = "../img/mango.jpg"
+        }
+    </script>
+</head>
+
+<body>
+    <h3>버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다.
+        <form onchange="co()">
+            <input type="radio" name="fruit" value="apple">사과
+            <input type="radio" name="fruit" value="banana">바나나
+            <input type="radio" name="fruit" value="mango">망고
+        </form>
+        <img src="../img/apple.jpg" id="img">
+</body>
+
+</html>

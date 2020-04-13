@@ -1,0 +1,86 @@
+<html lang="ko">
+<head>
+
+</head>
+<body>
+<div class="xe">
+<header>
+</header> 
+<div class="body">
+	<!--#JSPLUGIN:ui--><!--#JSPLUGIN:ui.datepicker--><section class="xm">
+	<div class="signup">
+	<h2 style="border-bottom:1px solid #ccc">회원가입</h2>
+		<form  id="fo_insert_member" action="./" method="post" enctype="multipart/form-data" class="form-horizontal"><input type="hidden" name="error_return_url" value="/index.php?mid=all&amp;act=dispMemberSignUpForm" /><input type="hidden" name="mid" value="all" /><input type="hidden" name="vid" value="" /><input type="hidden" name="ruleset" value="@insertMember" />
+		<input type="hidden" name="act" value="procMemberInsert" />
+		<input type="hidden" name="xe_validator_id" value="modules/member/skins" />
+		<input type="hidden" name="success_return_url" value="/index.php?mid=home" />
+				<div class="control-group">
+			<label for="user_id" class="control-label"><em style="color:red">*</em> 아이디</label>
+			<div class="controls">
+				<input type="text" name="user_id" id="user_id" value="" required />
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="password" class="control-label"><em style="color:red">*</em> 비밀번호</label>
+			<div class="controls">
+				<input type="password" name="password" id="password" value="" required />
+				<p class="help-inline">영문과 숫자를 포함한 6자리 이상의 비밀번호를 입력해주세요.</p>
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="password2" class="control-label"><em style="color:red">*</em> 비밀번호 확인</label>
+			<div class="controls">
+				<input type="password" name="password2" id="password2" value="" required />
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="email_address" class="control-label"><em style="color:red">*</em> 이메일 주소</label>
+			<div class="controls"><input type="email" name="email_address" id="email_address" value="" /></div>
+		</div>		<div class="control-group" style="display:none">
+			<div class="control-label">메일링 가입</div>
+			<div class="controls" style="padding-top:5px">
+				<label for="mailingYes"><input type="hidden" name="allow_mailing" id="mailingYes" value="Y" checked="checked" /> 예</label>
+			</div>
+		</div>
+		<div class="control-group" style="display:none">
+			<div class="control-label">쪽지 허용</div>
+			<div class="controls" style="padding-top:5px">
+				<label for="allow_Y"><input type="radio" name="allow_message" value="Y" checked="checked" id="allow_Y" /> 모두 허용</label><label for="allow_F"><input type="radio" name="allow_message" value="F" id="allow_F" /> 등록된 친구들만 허용</label><label for="allow_N"><input type="radio" name="allow_message" value="N" id="allow_N" /> 모두 금지</label>			</div>
+		</div>
+		<div class="btnArea" style="border-top:1px solid #ccc;padding-top:10px">
+			<input type="submit" value="등록" class="btn btn-inverse pull-right" />
+			<a href="/index.php?mid=all" class="btn pull-left">취소</a>
+		</div>
+	</form>
+</div>
+<script>
+jQuery(function($){
+	// label for setup
+	$('.control-label[for]').each(function(){
+		var $this = $(this);
+		if($this.attr('for') == ''){
+			$this.attr('for', $this.next().children(':visible:first').attr('id'));
+		}
+	});
+});
+(function($){
+	$(function(){
+		var option = { changeMonth: true, changeYear: true, gotoCurrent: false,yearRange:'-100:+10', dateFormat:'yy-mm-dd', onSelect:function(){
+			$(this).prev('input[type="hidden"]').val(this.value.replace(/-/g,""))}
+		};
+		$.extend(option,$.datepicker.regional['ko']);
+		$(".inputDate").datepicker(option);
+		$(".dateRemover").click(function() {
+			$(this).prevAll('input').val('');
+			return false;});
+	});
+})(jQuery);
+</script>
+</section>
+</div>
+
+		
+</div><!-- ETC -->
+<div class="wfsr"></div>
+<script src="/common/js/plugins/ui/jquery-ui.min.js?20190108194828"></script><script src="/common/js/plugins/ui/jquery.ui.datepicker-ko.js?20190108194828"></script><script src="/files/cache/ruleset/63fbaa2b57eb91d19f50bbd4cd097094.ko.js?20190921163704"></script></body>
+</html>

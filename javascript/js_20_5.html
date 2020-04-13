@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>this 활용</h3><hr>
+        <form>
+            <input type="button" id = "ch"onclick="change('ch', 'red', '40px')"value="클릭">
+            <input type="button" id = "ch1"onclick="change('ch1', 'blue', '60px')"value="클릭">
+            
+        </form>
+        <p>여기 클릭하면 크기와 색 변경</p>
+        
+        <script>
+            function change(object, color, size){
+                var p = document.getElementById(object);
+                p.style.color=color
+                p.style.fontSize=size
+            }
+        </script>
+    </body>
+</html>

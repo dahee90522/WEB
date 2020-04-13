@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>수학공식 계싼</title>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <h1>산술연산</h1>
+        <hr>
+        <form>
+            입력 <input type = text name = "num"id="num"><br/>
+            계산결과 <input type = text name = "result"id="result">
+            
+            <input type="button" id = "result1"onclick="sin()"value="sin">
+            <input type="button" id = "result2"onclick="log()"value="log">
+            <input type="button" id = "result3"onclick="sqrt()"value="sqrt">
+            <input type="button" id = "result4"onclick="abs()"value="abs">
+        </form>
+        <script>
+            var rresult;
+            function sin(){
+                var num = document.getElementById("num").value;
+                var numm=parseInt(num);
+                rresult = Math.sin(numm);
+                document.getElementById("result").value=rresult;}
+            function sqrt(){
+                var num = document.getElementById("num").value;
+                var numm=parseInt(num);
+                rresult = Math.sqrt(numm);
+                document.getElementById("result").value=rresult;}
+            function log(){
+                var num = document.getElementById("num").value;
+                var numm=parseInt(num);
+                rresult = Math.log(numm);
+                document.getElementById("result").value=rresult;}
+            function abs(){
+                var num = document.getElementById("num").value;
+                var numm=parseInt(num);
+                rresult = Math.abs(numm);
+                document.getElementById("result").value=rresult;}
+            
+        </script>
+    </body>
+</html>

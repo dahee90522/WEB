@@ -1,0 +1,61 @@
+
+#layer{
+    /*display:inline-block;*/
+    background-color : #f1f1f1; 
+    text-align:center;
+    padding-left:auto;/*margin-right:auto;*/
+    width:98%;
+    top:20px;
+}
+textarea{
+    background-color: rgb(239, 243, 241);
+}
+#infor_tit, #infor_name, #infor_pw{
+    height:24px;
+    margin:2px;
+    border:0 solid black;
+    border-bottom:1px solid lightgray;
+    border-left:1px solid lightgray;
+}
+#infor_name, #infor_pw{
+    height:20px;
+}
+.np{
+    font-size:13px;
+}
+#fileupload{
+    -webkit-apperance: none;
+    margin:8px;
+}
+#layer hr{
+    width:200px;
+
+}
+.table_write{margin-left:auto;margin-right:auto;}
+.cel{width:150px;}
+
+
+
+body{
+    background-color : #f1f1f1; 
+    text-align:center;
+    margin:20px;
+}
+.review_menu {
+    width:1003px;margin-left:auto;margin-right:auto;margin-top:20px;
+}
+table { border-collapse : collapse ;margin-bottom:15px;} 
+td { border: 1px solid #4c4c4c; }
+tr{height:35px;}
+.review_menu .review_write_{
+    display:block;
+    float:right;
+    width:65px;
+    height:25px;
+}
+#num1{
+    background-color:rgb(239, 243, 241);
+}
+hr{width:100px;}
+@media(min-height :0) and (max-height:500px){/*mobile version*/
+}

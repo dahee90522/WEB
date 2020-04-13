@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>배경 아무 곳이나 더블 클릭</title>
+    <script>
+        // document.write(result);
+        function doub() {
+            var a = Math.floor(Math.random() * 250) + 1;
+            var b = Math.floor(Math.random() * 250) + 1;
+            var c = Math.floor(Math.random() * 250) + 1;
+            console.log(a, b, c);
+            document.body.style.backgroundColor = 'rgb(' + a + ',' + b + ',' + c + ')';
+        }
+    </script>
+</head>
+
+<body ondblclick="doub()">
+    <h2>바탕 아무 곳에나 더블 클릭</h2>
+    <hr>
+    바탕 아무 곳이나 <strong>더블클릭</strong>하면 배경색이 랜덤으로 바뀝니다
+
+</body>
+
+</html>

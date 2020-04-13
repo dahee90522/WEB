@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <script>
+            function randomInt(){
+                return Math.floor(Math.random()*9+1);
+            }
+            var a = randomInt();
+            var b = randomInt();
+            var z = prompt(a+"*"+b+"의 값은 얼마 ?");
+            if(a*b==z){
+                document.write("정답");
+
+            }
+            else{
+                document.write("오답");
+            }
+        </script>
+    </body>
+</html>

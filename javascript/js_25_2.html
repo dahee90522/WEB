@@ -1,0 +1,46 @@
+<!--
+    1. 이미지 파일 7개를 배열로 초기화 var files = ['img/i.png', ...];
+    2. 이미지 객체가 저장될 배열 만들기 (arr)var img = new Array();
+    3. arr에 각각 이미지 객체 생ㅇ성해서 1번을 삽입a rr[i]=new Image(); arr[i].src = files[i];
+    4. 7번까지 가면 다시 1번으로 돌아옴
+    5. src 사용
+-->
+<html>
+
+<head>
+    <style>
+        #img {
+            border: 20px solid sienna;
+        }
+    </style>
+    <title></title>
+    <script>
+        var cnt = 1;
+        var files = ['../img/01.png', '../img/02.png', '../img/03.jpg', '../img/04.jpg', '../img/05.jpg', '../img/apple.jpg', '../img/banana.jpg'];
+        var arr = new Array();
+
+        for (i = 0; i < files.length; i++) {
+            arr[i] = new Image();
+            arr[i].src = files[i];
+        }
+
+        function sel() {
+            var im = document.getElementById("img");
+
+            im.src = arr[cnt].src;
+            cnt++;
+
+            //if (cnt == 7) cnt = 0;
+            cnt = cnt % files.length;
+
+        }
+    </script>
+</head>
+
+<body onload="sel()">
+    <h3>onload로 이미지 출력</h3>
+    <hr>
+    <img src="../img/01.png" id="img" onclick="sel()">
+</body>
+
+</html>

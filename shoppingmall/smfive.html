@@ -1,0 +1,97 @@
+<!--상세보기-->
+<!doctype html>
+<head>
+    <style>
+        div{
+            display : inline;
+            position : relative;
+            text-align : center;
+        }
+
+        img{
+            float : left;
+        }
+        hr{
+            float : center;
+            border:2px solid salmon;
+        }
+        h1{
+           
+            left:475px;
+        }
+        table{
+            display : block;
+            float : center;
+            position : relative;
+        }
+        .l {
+            width : 150px;
+            text-align : left;
+        }
+        .buy{
+            width : 100px;height : 30px;
+            background-color :navy;
+            color : white;
+            border:0px solid red;
+        }
+        .buy1{
+            width : 100px;height : 30px;
+            background-color :navy;
+            color : white;
+            border:0px solid red;
+        }
+    </style>
+
+</head>
+<body>
+    <div><img src = "image/perfume5.jpeg"width = "250px"height = "350px">
+        <h1>디올</h1>
+        <br>
+    <hr width = "200px" height ="30px">
+    <br>
+    <form>
+
+    <table>
+        <tr>
+            <td class = "l">판매가</td>
+            <td>18,000</td>
+        </tr>
+        <tr>
+            <td class = "l">상품코드</td>
+            <td>20190618</td>
+        </tr>
+        <tr>
+            <td class = "l">구매 수량</td>
+            <td>
+                    <input type = "number" min = "0" max = 5 value = "1">
+            </td>
+        </tr>
+        <tr>
+            <td class = "l">사이즈 및 옵션</td>
+            <td>
+                <select name = “size”>
+                    <option value = “1”>1</option>
+                    <option value = “2”>2</option>
+                    <option value = “3”>3</option>
+                    <option value = “4”>4</option>
+                    <option value = “5”>5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class = "l">배송비</td>
+            <td>무료배송</td>
+        </tr>
+        <tr>
+            <td class = "l">결재금액</td>
+            <td>18,000</td>
+        </tr>
+        <tr>
+            <td colspan = "2" class = "l" center>  
+                    <input type = "submit" name = "submit" value = "구매" class = "buy"/>
+                    <input type = "submit" name = "submit" value = "장바구니 넣기" class = "buy1"/>
+            </td>
+        </tr>
+    </table></form>
+</div>
+</body>

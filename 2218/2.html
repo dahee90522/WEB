@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body id = 'bo'>
+        <form method=post>
+                <input type = radio name='c1'value=v1 onclick="changeColor('green')">녹색
+                <input type = radio name='c1'value=v1 onclick="changeColor('red')">빨강
+        </form>
+        <script>
+            function changeColor(color){
+                var p = document.getElementById("bo");
+                p.style.backgroundColor=color
+            }
+        </script>
+    </body>
+</html>

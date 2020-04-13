@@ -1,0 +1,22 @@
+
+<html>
+    <head>
+        <style>
+            #btn{
+                background-color:blueviolet;
+            }
+        </style>
+        <title>context 메뉴</title>
+        <script>
+            function change(){
+                var i = document.getElementById("img");
+                i.src = "../img/03.jpg";
+                alert("width : "+ i.width+ ", height : "+ i.height);
+            }
+        </script>
+    </head>
+    <body >
+            <img src = "../img/01.png"id="img"width = "150px" height="150px">
+            <input type="button"name = ""id="btn"value="클릭" onclick='change()'>
+    </body>
+</html>

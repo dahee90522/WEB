@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script>
+        function keyevent() {
+            if (event.keyCode == 13) {
+                var obj = document.getElementById("txt").value;
+                var p = eval(obj);
+                document.getElementById("result").value = p;
+            }
+            else { }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>onclick, 계산기 만들기</h3>
+    <hr>
+    계산하고자 하는 수식을 입력하고 계산 버튼을 눌러봐요<br>
+    식<input type="text" id="txt" onKeyDown="javascript:keyevent()"><br>
+    값<input type="text" id="result">
+</body>
+
+</html>

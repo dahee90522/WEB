@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            function addAnswer(t, answer){
+                var obj = document.getElementById("p");
+                var newDIV = document.createElement("p");
+                newDIV.innerHTML = answer;
+                obj.appendChild(newDIV);
+                newDIV.onclick=function(){
+                    var parent = this.parentElement;
+                    parent.removeChild(this);
+                }
+            }
+        </script>
+        
+    </head>
+    <body id = "parent">
+        <h3>문제2번</h3>
+        <hr>
+        <div id = "d">
+            <p>Q. 제일 자신 있는 언어는?</p>
+            <button onclick="addAnswer(this, '한국어')">답보기</button>
+            <p id = p></p>
+        </div>
+        <div id = "d">
+            <p>Q. 크리스마스 이브는 무슨 요일?</p>
+            <button onclick="addAnswer(this, '화요일')">답보기</button>
+            <p id = p></p>
+        </div>
+    </body>
+</html>

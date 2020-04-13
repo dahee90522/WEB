@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+    <title>inputtag</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>로그인</legend>
+            아이디<input type = "text" name = "user_id" size = "15"/><br/>
+            비밀번호<input type = "password" name = "pwd"/><br/>
+        </fieldset>
+        <fieldset>
+            이메일<input type = "email" name = "email"  size = "15"/><br/>
+            홈페이지<input type = "url"  name = "page"/><br/>
+            전화번호<input type = "tel"  name = "tel"/><br/>
+        </fieldset>
+        <input type = "text" required/><br><!--required - 필요하다    무조건 입력-->
+        <input type = "text" disabled><br><!--삽입 불가능-->
+        <input type = "text" autofocus><br><!--자동으로 입력할 수 있게 깜빡깜빡-->
+        <input type="submit" value = "로그인">
+        <input type = "email" placeholder="s2018s40@e-mirim.hs.kr"><!--입력 힌트-->
+        <input type = "search" autocomplete = "on\off"><!--자동완성-->
+</form>
+</body>

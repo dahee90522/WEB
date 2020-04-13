@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Welcome to the wonderful world</title>
+
+        <style>
+            body{
+                margin : 0 auto;
+            }
+            .container{
+                width : 100%;
+                height : 100%;
+                margin : 0 auto;
+
+            }
+            header{
+                width : 100%;
+                height : 20%;
+                text-align:center;
+                line-height : 125px;
+                color : white;
+                text-shadow: 0px 0px 15px lightsalmon;
+               background-color : #FFB3A3;
+
+            }
+            .content{
+                width : 101%;
+                height : 70%;
+                position : absolute; 
+                text-align:center;
+                margin : 0 auto;
+            }
+            .content .menubody{
+                width : 245px;
+                height : 100%;
+                background-color:#FFD4B0;
+                float : left;
+            }
+            .content .adver{
+                width : 240px;
+                height : 100%;
+                background-color:#FFD4B0;
+                float : left;
+            }
+            .frame{
+                width :70%;
+                height : 100%;
+                float : left;
+                margin : 0 auto;
+            }
+            .menu{
+                width : 90%;
+                height : 10%;
+                line-height : 50px;
+                margin : 5px;
+            }
+            a:link{
+                text-decoration :none;
+                color : #424242;
+            }
+            .menu:hover{
+                background-color: lightcoral;
+                color : white;
+                border-radius: 30px;
+
+            }
+            a:visited{
+                text-decoration :none;
+                color : #424242;
+
+            }
+            a:hover{
+                text-decoration :none;
+                color : #424242;
+
+            }
+            a:active{
+                text-decoration :none;
+                color : #424242;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class = "container">
+            
+            <header>
+                <h1>wonderful world</h1>
+            </header>
+        <div class ="content">
+                <section class = "menubody">
+                    <a href = "smlogin.html"target = "main1"><div class = "menu">회원가입</div></a>
+                    <a href = "smmypage.html"target = "main1"><div class = "menu">마이 페이지</div></a>
+                    <a href = "small.html"target = "main1"><div class = "menu">전체 상품보기</div></a>
+                    <a href = "smreco.html"target = "main1"><div class = "menu">추천 상품</div></a>
+                    <a href = "smbas.html"target = "main1"><div class = "menu">장바구니</div></a>
+                </section>
+                <section class = "frame">
+                    <iframe src = "smframe.html" width =100% height = 100% name = "main1" style = "border:0;"></iframe>
+                </section>
+                <section class = "adver">
+                    광고
+                    <iframe src = "smadframe.html" width = 100% height = 100% name = "admain" style = "border:0;"></iframe>
+                </section>
+            </div>
+            <footer>
+                <address>
+                </address>
+            </footer>
+        </div>
+    </body>
+</html>

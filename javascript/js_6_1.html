@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            table{
+                border:1px solid gray;
+                text-align : center;
+            }
+            .td{
+                background-color : lightsalmon;
+                width : 120;
+                height:40px;
+            }
+            input{
+                width:260px;
+                height:30px;;
+            }
+        </style>
+        <title>자바스크립트에서 html요소에 접근하는 방법</title>
+        <script>
+                function calc(){
+                    var f = document.getElementById("first").value;//document.getElementById(A)-->아이디가 A인 애를 가져옴
+                    var s = document.getElementById("second").value;//html태그 불러오기
+                    var re=parseInt(f)+parseInt(s);
+                    document.getElementById("result").value=re;
+                }
+                //document.getElementById().value();
+            </script>
+    </head>
+    <body>
+        <h1>자바스크립트에서 html요소에 접근하는 방법</h1>
+        <table>
+            <tr>
+                <td class = "td">첫번째 정수</td>
+                <td><input type = text name = "firstnum"id="first"></td>
+            </tr>
+            <tr>
+                <td class = "td">두번째 정수</td>
+                <td><input type = text name = "secondnum"id="second"></td>
+            </tr>
+            <tr>
+                <td class = "td">총 합</td>
+                <td><input type = text name = "result"id="result"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id = "cancel" type = "cancel"value="취소"></input></td>
+                <td><input type="button" id = "result1" type = "submit"onclick="calc()"value="계산"></input></td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <title></title>
+    <script>
+        function sel() {
+            var i = document.getElementById("image");
+            var sel = document.getElementById("sel");
+            var img = sel.options[sel.selectedIndex].value;
+            i.src = img;
+        }
+    </script>
+</head>
+
+<body>
+    <h3>과일 출력</h3>
+    <hr>
+    과일을 선택하면 이미지가 출력됩니다.<br>
+    <select id="sel" onchange="sel()">
+        <option value="../img/apple.jpg">사과</option>
+        <option value="../img/banana.jpg">바나나</option>
+        <option value="../img/mango.jpg">망고</option>
+    </select>
+    <br><img src="../img/apple.jpg" id="image">
+</body>
+
+</html>

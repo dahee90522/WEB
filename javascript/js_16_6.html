@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>오전이면 오렌지 오후면 살먼</h3>
+        <hr>
+        <script>
+            var date1 = new Date();
+            var timeh = date1. getHours();
+            var timem = date1. getMinutes();
+            var times = date1. getSeconds();
+            document.write("현재시간 : "+timeh+"시"+timem+"분"+times+"초");
+            if(timeh<12){
+                document.write("<style>");
+                document.write("body{background:orange;}");
+                document.write("</style>");
+            }
+            else{
+                document.write("<style>");
+                document.write("body{background:salmon;}");
+                document.write("</style>");
+            
+            }
+        </script>
+    </body>
+</html>

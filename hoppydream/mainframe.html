@@ -1,0 +1,94 @@
+<!--시작화면-->
+<!--여기에 꿈나무카드나 식당같은거 설명같은거 써놓는게 어떨까-->
+<head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .imgmenu{float:right;margin-right:260px;}
+        .imgmenu img{
+            display:block;
+            width: 150px;
+            height:150px;
+            margin:19px;
+        }
+        .ex1, .ex2, .ex3{
+            text-align:justify;
+            font-size:20px;
+            font-family: 'Do Hyeon', sans-serif;
+            
+        }
+        .explain li{
+            MARGIN:68PX;
+            line-height:1.9em;
+        }
+        .explain{
+            margin-left:260px; 
+            display:inline-block;
+            width:730px;
+        }
+        .ex2{
+            margin-top:63px;
+        }
+        @media(min-height :0) and (max-height:500px){/*mobile version*/
+            .ex1, .ex2, .ex3{font-size:15px;font-weight:200;}
+            .imgmenu img{
+                display: inline-block;
+                width: 60px;
+                height:60px;
+                margin:10px;
+            }
+            .explain{
+                margin-left:auto;
+                display:inline-block;
+                width:500px;
+            }
+            .imgmenu{margin-right:auto;}
+            .layer{
+                color:#333;
+                border:1px solid rgb(0, 0, 0);
+            }
+            span{
+                color:salmon;
+            }
+        }
+        #layer{display:none;position:fixed;left:100px;top:-5px;height:600px;width:380px;border:10px solid rgb(199, 216, 164);box-shadow:3px 10px rgba(0, 0, 0, 0.4);}
+        #layer img{display:block;height:600px;width:380px;}
+        #layer .close{position: absolute;right:20px;top:20px;background : rgb(178, 219, 97);padding:1px 6px;color:#fff;}
+        #layer .close:hover{text-decoration: underline;}
+    </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="explain">
+        <ul>
+            <li><div class="ex1">꿈나무 카드란 빈곤과 가정해체, <br/>부모의 실직과 질병 등으로<br/> 결식이 우려되는 아동들에게  <BR/>전자카드로 급식비를 지원해주는 제도입니다. </div></li>
+            <li><div class ="ex2">이 카드는 2009년 7월 1일부터 <br/>각 지자체에서 발급하고 있으며 <br/>학교에서 급식을 먹지 못할 경우 <BR/>학교 바깥에서 급식에 준하는 식사를 할 수 있도록 <br/>정부에서 보조하는 카드로<br/>사용시간은 오전 6시부터 오후 10시까지 입니다.</div></li>
+            <li class="layer"><div class ="ex3"><a href="#"><span style="color:salmon;">→</span> 꿈나무 카드 이용 가맹점으로는 <br/>서울시내 모든 편의점에서 이용이 가능하며 <br/>일반 음식점, 제과점 등은 <br/>구청에서 지정한 곳만 가능합니다.</a></div></li>
+        </ul>
+    </div>
+    <div class="imgmenu">
+
+        <ul>
+            <li><a href = "iframe_map.html"><img src = "img/web_place.png"title="꿈나무식당가맹점현황"><span class = "ir_pm">꿈나무식당가맹점</span></a></li>
+            <li><a href = "iframe_kate.html"><img src = "img/web_meal.png" title="카테고리"><span class = "ir_pm">카테고리</span></a></li>
+            <li><a href = "iframe_review.html"><img src = "img/web_review.png" title="후기"><span class = "ir_pm">후기</span></a></li>
+        </ul>
+        
+    </div>
+    <div id="layer">
+        <img src = "img/72881816_2400635263544158_1352955551968919552_n.jpg"alt = "레이어팝업이미지">
+        <a href = "#" class = "close">Close</a>
+    </div>
+    <script type = "text/javascript">
+     //레이어팝업
+        $(".layer").click(function(event){
+            event.preventDefault();
+            $("#layer").slideDown();
+        });
+        $("#layer .close").click(function(event){
+            $("#layer").fadeOut("slow");
+        });
+    </script>
+
+</body>

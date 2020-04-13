@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>책</h3>
+        <hr>
+        <script>
+            function read(){document.write("읽다");}
+            function buy(){document.write("사다");}
+            function book (title, author, price){
+                this.title = title;
+                this.author = author;
+                this.price = price;
+                this.read = read;
+                this.buy=buy;
+            }
+            var book = new book('가', '나', 7000);
+            document.write(book.title,"<br>");
+            document.write(book.author,"<br>");
+            document.write(book.price,"<br>");
+            book.read();
+            book.buy();
+        </script>
+    </body>
+</html>

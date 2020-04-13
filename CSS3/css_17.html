@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            [class~="button"]{
+                border:2px solid red;
+            }
+            h3 + ul{
+                color : #f5dd08;
+            }
+            h3 ~ ul{
+                background-color : green;
+            }
+            a[title |= "US"]{
+                background : salmon;
+                border : 3px solid green;
+            }
+            a[title |= "japanese"]{
+                background : hotpink;
+                padding:20px;
+            }
+            a[title ^= jap]{
+                background : gray;
+                color : white;
+            }
+            a[title ^= ch]{
+                background : lightseagreen;
+                font-size:20px;
+            }
+            a[href$=hwp]{
+                background-color : purple;
+            }
+            a[href$=xls]{
+                background-color : brown;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>예약 방법 및 요금</h3>
+            <ul>
+                <li>직접 통화</li>
+                <li>음성 남기기</li>
+            </ul>
+            <ul>
+                <li>1인 : 30000원</li>
+                <li>2인 : 50000원</li>
+                <li>3인 : 100000원</li>
+            </ul>
+        </div>
+        <hr>
+        <ul>
+            <li><a href = "#" target = "_blank">집으로</a></li>
+            <li><a href = "#" class = "button">게시판</a></li>
+            <li><a href = "#" class = "flat button">방명록</a></li>
+        </ul>
+        <h4>외국어 서비스</h4>
+        <ul>
+            <li><a href = "#" title = "US">영어</a></li>
+            <li><a href = "#"title = "US-english">영어33</a></li>
+            <li><a href = "#" >영어5</a></li>
+            <li><a href = "#"title = "japanese">일본어</a></li>
+            <li><a href = "#"title = "chinese">중국어</a></li>
+        </ul>
+        <h4>파일 서비스</h4>
+        <ul>
+            <li><a href = "a.hwp">hwp</a></li>
+            <li><a href = "intro.xls">엑셀파일</a></li>
+        </ul>
+    </body>
+</html>

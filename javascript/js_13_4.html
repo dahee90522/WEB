@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>함수</title>
+        
+    </head>
+    <body>
+        <script>
+            var max=0;
+            var maxnum=function(){
+
+                for(var i =0;i<5;i++){
+                    var a=prompt("숫자 입력");
+                    if(a>=max){
+                        max=a;
+                    }
+                }
+                document.write(max);
+            }
+            maxnum();
+        </script>
+    </body>
+</html>

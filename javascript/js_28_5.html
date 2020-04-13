@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script>
+        function wheel() {
+            var wid = 150;
+            var hei = 150;
+            var i = Document.getElementById("img");
+            if (wheelDelta > 0) {
+                if (wid < 150 && hei < 150) {
+                    wid += 3;
+                    hei += 3;
+                }
+                i.style.width = wid + px;
+                i.style.height = hei + px;
+            }
+            else if (wheelDelta < 0) {
+                if (wid > 10 && hei > 10) {
+                    wid -= 3;
+                    hei -= 3;
+                }
+                i.style.width = wid + px;
+                i.style.height = hei + px;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="../img/02.png" id="img" onwheel="wheel()" width=100px height=100px;>
+</body>
+
+</html>

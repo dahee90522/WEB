@@ -1,0 +1,86 @@
+<!--리뷰-->
+<!doctype html>
+<head>
+    <style>
+        textarea{
+            background-color: rgb(239, 243, 241);
+        }
+        tr{
+            width:400px;
+        }
+        td{
+            border:1px solid #333;  
+        }
+        body{
+            background-color : #f1f1f1; 
+            text-align:center;
+            width:815px;/*width=838, height=533*/
+            height:515px;
+        }
+        #infor_tit, #infor_name, #infor_pw{
+            height:20px;
+            margin:2px;
+            border:0 solid black;
+            border-bottom:1px solid lightgray;
+            border-left:1px solid lightgray;
+        }
+        table { border-collapse : collapse ;margin-bottom:15px;} 
+td { border: 1px solid #4c4c4c; }
+        #infor_name, #infor_pw{
+            height:20px;
+        }
+        
+        .np{
+            font-size:13px;
+        }
+        #fileupload{
+            -webkit-apperance: none;
+            margin:8px;
+        }
+        hr{
+            width:200px;
+        
+        }
+        table{margin-left: auto; margin-right: auto;width:300px;height:400px;}
+        #div{
+                text-align:center;
+        }
+        #layer{display:none;position:fixed;left:50px;top:50px;width:700px;border:10px solid #dceff7;box-shadow:3px 10px rgba(0, 0, 0, 0.4);}
+
+    </style>    
+    <script>// src="https://code.jquery.com/jquery-3.4.1.min.js"
+        function test(){                           // test라는 함수 정의
+            location.href='iframe_review';        // 실행코드
+        } 
+    </script>
+</head>
+<body>
+    <h3>의견 작성</h3>
+    <hr>
+    <br/>
+    <table style="width:490px;height:400px;">
+        <form>
+            <tr>
+                <td>제목 <input type = "text" name = "user_ti" value = "" size = "120"placeholder="제목 입력"id="infor_tit"required/></td>
+            </tr>
+            <tr>
+                <td><input multiple="multiple" type="file" name="filename[]" id="fileupload"/></td>
+            </tr>
+            <tr>
+                <td><textarea rows = "20" cols = "80%" name = “txt”  placeholder="의견을 작성해주세요!!"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type = "submit" name = "hi" value = "저장"​ class="layer"/></class="layer">
+                <input type = "reset" name = "hi1" value = "지우기"></td>
+            </tr>
+        </form>
+    </table>
+    <div id="review">
+        <div id="div" style='position:absolute; display:none; z-index:9999;'>
+            의견이 전달되었습니다
+            좋은 의견 감사합니다
+        </div>
+    </div>
+</body>
+
+<!--width = "100%" height = "155%"-->

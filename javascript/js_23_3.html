@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            function down(t){
+                t.style.fontSize="12px";
+            }
+            function up(t){
+                t.style.fontSize="50px";
+            }
+            function over(t){
+                t.style.fontSize="34px";
+            }
+            function wheel(e, t){
+                if(e.wheelDelta<0){
+                    console.log("아래로");
+                }
+                else{
+                    console.log("위로")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>마우스 관련 
+            <span onmousedown="down(this)"
+                onmouseup="up(this)"
+                onmouseover="over(this)"
+                onwheel="wheel(event, this)">
+                이벤트
+            </span>
+            가 발생합니다.
+        </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <title></title>
+    <script>
+        function keyevent() {
+            console.log(event.keyCode);
+            var i = document.getElementById("body");
+            switch (event.keyCode) {
+                case 37: i.style.background = 'red'; break;
+                case 38: i.style.background = 'blue'; break;
+                case 39: i.style.background = 'green'; break;
+                case 40: i.style.background = 'yellow'; break;
+            }
+        }
+    </script>
+</head>
+
+<body id="body">
+    키이벤트 예제<input type="text" onKeyDown="javascript:keyevent()" ;>
+</body>
+
+</html>

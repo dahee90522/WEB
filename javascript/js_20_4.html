@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>CSS 스타일 동적 변경</h3><hr>
+        <p id = "pp" style="color:blue;">여기에 <span onclick = "change()"style="color:red">클릭하세요</span></p>
+        
+        <script>
+            function change(){
+                var p = document.getElementById("pp");
+                p.innerHTML="<p>나의<img src = '../img/01.png'>어피치</p>"
+            }
+        </script>
+    </body>
+</html>

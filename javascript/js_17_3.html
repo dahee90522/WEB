@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>계좌</h3>
+        <hr>
+        <script>
+            var account={
+                'name':'kim',
+                'code':'111',
+                'balance':3500,
+                deposit:function(money){this.balance+=money;return this.balance;},
+                withdraw:function(){}
+            }
+            document.write(account.name,"<br>");
+            document.write(account.deposit(100));
+        </script>
+    </body>
+</html>

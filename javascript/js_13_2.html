@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>함수</title>
+        
+    </head>
+    <body>
+        <script>
+            var x1 = prompt("숫자1 입력 : ");
+            var x = parseInt(x1);
+            var y1 = prompt("숫자2 입력 : ");
+            var y = parseInt(y1);
+            function sum(x, y){
+                var sum=0;
+                if(x>y){
+                    for(var i=x;i>=y;i--){
+                        sum+=i;
+                    }
+                }
+                if(x<y){
+                    for(var i=x;i<=y;i++){
+                        sum+=i;
+                    }
+                }
+                return sum;
+            }
+            var result=sum(x, y);
+            document.write(result);
+        </script>
+    </body>
+</html>

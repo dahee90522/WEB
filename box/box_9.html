@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    <style>
+        .box1{
+            border:2px solid red;
+            width : 600px;
+            height : 100px;
+            background-color: salmon;
+            padding : 20px;
+            margin : 30px;
+            box-sizing : content-box;/*마진 패딩 포함X 600 -->width : 700*/
+        }
+        .box2{
+            border:2px solid blue;
+            width : 600px;
+            height : 100px;
+            background-color: lightblue;
+            padding : 20px;
+            margin : 30px;
+            box-sizing: border-box;/*마진 패딩 포함 600 -->width : 500*/
+        }
+        </style>
+    </head>
+<body>
+    <div class = "box1">
+        content box
+    </div>
+    <div class = "box2">
+        border box
+    </div>
+</body>

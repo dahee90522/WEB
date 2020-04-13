@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        
+    </head>
+    <body>
+        <h3>계좌</h3>
+        <hr>
+        <script>
+            var account=new Object();
+            account.owner = 'kim';
+            account.code = '111';
+            account.balance = 3500;
+            account.deposit=deposit;
+            account.withdraw=withdraw;
+            function deposit(money){this.balance+=money;return this.balance;}
+            function withdraw(money){this.balance-=money;return this.balance;}
+            
+            var a = prompt("입금할 잔액");
+            var b = parseInt(a);
+
+            var result = account.deposit(b);
+                document.write(result)
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>자스 산술연산</title>
+        <script>
+            function calc(){
+                var score = document.getElementById("score").value;//document.getElementById(A)-->아이디가 A인 애를 가져옴
+                var a=parseInt(score)
+                var re;
+                switch((a-a%10)/10){
+                    case (9):re="A";break;
+                    case (8):re="B";break;
+                    case (7):re="C";break;
+                    case (6):re="D";break;
+                    default:re="E";
+                }
+                document.getElementById("result").value=re;
+            }
+            //document.getElementById().value();
+        </script>
+    </head>
+    <body>
+        <h1>산술연산</h1>
+        <hr>
+        <form>
+            점수 입력 <input type = text name = "result"id="score"><br/>
+            <input type="button" id = "result1"onclick="calc()"value="계산"><br/>
+            등급 <input type = text name = "result"id="result">
+        </form>
+    </body>
+</html>

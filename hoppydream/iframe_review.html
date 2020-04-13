@@ -1,0 +1,157 @@
+<!--리뷰-->
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reviewstyle.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+<body>
+        <h3>후기글</h3>
+        <hr>
+    <div class="review_menu">
+        <table >
+            <colgroup>
+                <col width="50px">
+                <col width="600px">
+                <col width="150px">
+                <col width="200px">
+            </colgroup>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>이름</td>
+                <td>날짜</td>
+            </tr>
+            <tr id="num1">
+                <td id="num">1</td>
+                <td>박리김밥 - 너무 맛있네요~~</td>
+                <td>safjkl</td>
+                <td>2019-09-20</td>
+            </tr>
+            <tr>
+                <td id="num">2</td>
+                <td>기프트 - 너무 맛있네요~~</td>
+                <td>gksmf</td>
+                <td>2019-09-20</td>
+            </tr>
+            <tr id="num1">
+                <td id="num">3</td>
+                <td>한양마트 - 가격이 싸요!</td>
+                <td>codus</td>
+                <td>2019-09-20</td>
+            </tr>
+            <tr>
+                <td id="num">4</td>
+                <td>파리바게트 강남포이점 - 친절하고 싸네요</td>
+                <td>유경</td>
+                <td>2019-09-20</td>
+            </tr>
+            <tr id="num1">
+                <td id="num">5</td>
+                <td>한솥 - 너무 맛있어요!!</td>
+                <td>호2398</td>
+                <td>2019-09-20</td>
+            </tr>
+            <tr>
+                <td id="num">6</td>
+                <td>사보르 - 제 취향이에요!!</td>
+                <td>095468</td>
+                <td>2019-09-22</td>
+            </tr>
+            <tr id="num1">
+                <td id="num">7</td>
+                <td>만리향 - 너무 깨끗하고 맛있네요~~</td>
+                <td>다희</td>
+                <td>2019-09-22</td>
+            </tr>
+            <tr>
+                <td id="num">8</td>
+                <td>김가네 김밥 - 너무 맛있고 좋아요~~</td>
+                <td>68902</td>
+                <td>2019-09-23</td>
+            </tr>
+            <tr id="num1">
+                <td id="num">9</td>
+                <td>박리김밥 - 너무 친절하네요~~</td>
+                <td>safjkl</td>
+                <td>2019-09-23</td>
+            </tr>
+            <tr>
+                <td id="num">10</td>
+                <td>김밥천국 - 너무 맛있네요~~</td>
+                <td>sjkjkl</td>
+                <td>2019-09-23</td>
+            </tr>
+        </table>
+        <form>
+            
+            <input type="button" class="review_write_" value="후기작성">
+        </form>
+    </div>
+    <br/>
+    <br/>
+    <div id="layer"style='position:absolute; display:none; z-index:9999;'>
+        <h3>후기글작성</h3>
+        <hr>
+        <br/>
+        <table class="table_write">
+            <form>
+                <tr>
+                    <td colspan="3">  제목 <input type = "text" name = "user_ti" value = "" size = "110"placeholder="가게이름 - 제목 입력"id="infor_tit"required/></td>
+                </tr>
+                <tr>
+                    <td class="np">이름 <input type = "text" name = "user_name" value = "" size = "15"required placeholder="이름 입력"id="infor_name"/></td>
+                    <td class="np">비밀번호 <input type = "text" name = "user_pw" value = "" size = "15"placeholder="비밀번호 입력"id="infor_pw"/></td>
+                    </td><td class="cele"><select name = “sel”>
+                            <option value = “gangnam”>강남구</option>
+                            <option value = “gangdong”>강동구</option>
+                            <option value = “gangbuk”>강북구</option>
+                            <option value = “gangseo”>강서구</option>
+                            <option value = “guro”>구로구</option>
+                            <option value = “gumchen”>금천구</option>
+                            <option value = “gwanak”>관악구</option>
+                            <option value = “gwangjin”>광진구</option>
+                            <option value = “guro”>구로구</option>
+                            <option value = “nowon”>노원구</option>
+                            <option value = “dobong”>도봉구</option>
+                            <option value = “dongdaemun”>동대문구</option>
+                            <option value = “dongjak”>동작구</option>
+                            <option value = “mapo”>마포구</option>
+                            <option value = “seodaemun”>서대문구</option>
+                            <option value = “seongdong”>성동구</option>
+                            <option value = “seongbuk”>성북구</option>
+                            <option value = “seocho”>서초구</option>
+                            <option value = “songpa”>송파구</option>
+                            <option value = “eonpyung”>은평구</option>
+                            <option value = “yongsan”>용산구</option>
+                            <option value = “yangcheon”>양천구</option>
+                            <option value = “yeongdungpo”>영등포구</option>
+                            <option value = “jongro”>종로구</option>
+                            <option value = “junglang”>중랑구</option>
+                            <option value = “jung”>중구</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input multiple="multiple" type="file" name="filename[]" id="fileupload"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><textarea rows = "18" cols = "120%" style="width:95%;"name = “txt”></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input type = "submit" name = "hi" value = "저장"​ class="save"/>
+                        <input type = "reset" name = "hi1" value = "지우기"></td>
+                </tr>
+            </form>
+        </tablec>
+    </div>
+    <script type = "text/javascript">
+         //레이어팝업
+            $(".review_write_").click(function(event){
+                event.preventDefault();
+                $("#layer").fadeIn();
+            });
+            $("#layer .close").click(function(event){
+                $("#layer").fadeOut("slow");
+            });
+        </script>
+</body>

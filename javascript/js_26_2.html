@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script>
+        var cost = 0;
+        function co(t) {
+            if(t.checked == true) cost=cost+parseInt(document.getElementById("check").value);
+            else if(t.checked == false) cost=cost-parseInt(document.getElementById("check").value);
+            document.getElementById("result").value = cost;
+        }
+    </script>
+</head>
+
+<body onload = 'co()'>
+    <h3>버튼을 클릭하면 선택된 체크박스의 value를 출력합니다.</h3>
+    <form>
+        <input type = "checkbox" name="c1"value = "10000"id = "check"onclick = "co(this)">모자 1만원
+        <input type = "checkbox" name="c2"value = "30000"id = "check"onclick = 'co(this)'>구두 3만원
+        <input type = "checkbox" name="c3"value = "80000"id = "check"onclick = 'co(this)'>명품가방 8만원<br>
+        지불하실 금액<input type = "text" id = "result">
+    </form>
+</body>
+
+</html>
